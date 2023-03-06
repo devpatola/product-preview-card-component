@@ -32,7 +32,7 @@
     <script>
       tailwind.config = {
         theme: {
-          extends: {
+          extend: {
             colors: {
               "dark-cyan": "hsl(158, 36%, 37%)",
               cream: "hsl(30, 38%, 92%)",
@@ -48,23 +48,58 @@
       };
     </script>
   </head>
-  <body>
-    <main>
-      <div>
-        <img src="./images/image-product-mobile.jpg" alt="Parfum" />
-        <div>
-          <h3>Preview</h3>
-          <h1>Gabrielle Essence Eau De Parfum</h1>
-          <p>
+  <body class="bg-cream min-h-screen">
+    <main class="md:flex md:justify-center md:items-center md:h-screen">
+      <!-- product card -->
+      <div class="mx-4 my-7 bg-white shadow-sm rounded-xl md:w-1/2 md:flex">
+        <!-- mobile picture -->
+        <img
+          src="./images/image-product-mobile.jpg"
+          alt="Gabrielle CHANEL"
+          class="rounded-t-xl md:hidden"
+        />
+        <!-- desktop picture -->
+        <img
+          src="./images/image-product-desktop.jpg"
+          alt="Gabrielle CHANEL"
+          class="hidden rounded-l-xl md:block w-1/2"
+        />
+        <!-- infos -->
+        <div
+          class="p-6 space-y-3 md:p-10 md:flex md:flex-col md:justify-between"
+        >
+          <h3
+            class="font-montserrat text-dark-grayish-blue tracking-[0.25em] text-sm"
+          >
+            PERFUME
+          </h3>
+          <h1 class="font-fraunces font-bold text-3xl leading-none md:text-4xl">
+            Gabrielle Essence Eau De Parfum
+          </h1>
+          <p class="text-base text-dark-grayish-blue py-1 md:text-[17px]">
             A floral, solar and voluptuous interpretation composed by Olivier
             Polge, Perfumer-Creator for the House of CHANEL.
           </p>
-          <div>
-            <h2>$149.99</h2>
-            <span>$169.99 </span>
+          <!-- price tag -->
+          <div class="flex space-x-4 items-center py-1">
+            <h2
+              class="font-fraunces font-bold text-3xl text-dark-cyan md:text-4xl"
+            >
+              $149.99
+            </h2>
+            <span
+              class="font-montserrat text-dark-grayish-blue text-sm line-through"
+              >$169.99</span
+            >
           </div>
+          <!-- button -->
+          <button
+            class="font-bold font-montserrat bg-dark-cyan rounded-xl w-full py-3 text-white flex justify-center items-center space-x-2 md:py-4"
+          >
+            <img src="./images/icon-cart.svg" alt="Cart icon" />
+            <span>Add to Cart</span>
+          </button>
         </div>
-        <button>Add to Cart</button>
       </div>
     </main>
     <div class="attribution">
